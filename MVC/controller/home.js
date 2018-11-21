@@ -1,5 +1,3 @@
-const HomeService = require('../service/home');
-
 module.exports = {
   index: async(ctx, next) => {
     ctx.body = '<h1>index page</h1>';
@@ -20,21 +18,5 @@ module.exports = {
       }
     });
     ctx.log.info(`send data: ${JSON.stringify(ctx.params)}`);
-  },
-  login: async(ctx) => {
-    ctx.body = `
-      <form action="/login" method="post">
-        <input name="name" type="text" placeholder="请输入用户名：abc"/>
-        <br/>
-        <input name="password" type="text" placeholder="请输入密码：123"/>
-        <br/>
-        <button>GoGoGo</button>
-      </form>
-    `
-  },
-  loginPost: async(ctx) => {
-    const { name, password } = ctx.request.body;
-    const data = await HomeService.loginPost(name, password);
-    ctx.body = data;
   }
 }
