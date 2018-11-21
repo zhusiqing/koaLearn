@@ -1,0 +1,16 @@
+{
+  "name": "koaLearn",
+  "version": "1.0.0",
+  "description": "learn",
+  "main": "server.js",
+  "author": "siqing",
+  "license": "MIT",
+  "dependencies": {
+    "ip": "^1.1.5",
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "log4js": "^3.0.6"
+  }
+}
