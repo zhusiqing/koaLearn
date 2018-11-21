@@ -24,11 +24,20 @@ module. exports = (options = {}) => {
       pattern: '-yyyy-MM-dd.log',
       alwaysIncludePattern: true,
       serverIp,
+      // 设置输出格式
+      layout: {
+        type: 'pattern',
+        pattern: '[%d{yyyy-MM-dd hh:mm:ss}] [%p] %c %m%n'
+      }
     }
   };
   if (env === 'dev' || env === 'local' || env === 'development') {
     appenders.out = {
-      type: 'console'
+      type: 'console',
+      layout: {
+        type: 'pattern',
+        pattern: '%[[%d{yyyy-MM-dd hh:mm:ss}] [%p] %c%] %m%n'
+      }
     }
   }
   log4js.configure({
